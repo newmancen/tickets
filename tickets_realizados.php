@@ -12,6 +12,7 @@
 
 <?php
 //session_start();
+require_once 'config.php';
 
 // Verificar si el usuario está autenticado
 /*if (!isset($_SESSION['usuario'])) {
@@ -23,13 +24,9 @@
 // Obtener los tickets realizados de la base de datos (ajusta los valores según tu configuración)
 //$conn = new mysqli('localhost', 'id20920072_cil', 'Can@lla123', 'id20920072_tickets');
 
-$servername = "localhost";
-$username = "id20920072_cil";
-$password = "Can@lla123";
-$dbname = "id20920072_tickets";
 
 // Crear la conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $user, $pass, $dbname);
 
 // Verificar la conexión
 if ($conn->connect_error) {

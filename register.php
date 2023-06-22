@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Aquí puedes realizar validaciones adicionales, como verificar si el usuario ya existe
 
   // Conexión a la base de datos
-  $conn = new mysqli('localhost', 'root', '', 'tickets');
+  $conn = new mysqli($servername, $user, $pass, $dbname);
   if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
   }

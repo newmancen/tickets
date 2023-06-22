@@ -1,5 +1,7 @@
 <?php
    session_start();
+   require_once 'config.php';
+
    if (!isset($_SESSION['usuario'])) {
       // Si el usuario no ha iniciado sesión, redirige al formulario de login
       header("Location: login.php");
@@ -24,7 +26,7 @@
       $id = $_GET['id'];
 
       // Conexión a la base de datos
-       $conn = new mysqli('localhost', 'root', '', 'tickets');
+      $conn = new mysqli($servername, $user, $pass, $dbname);
       if ($conn->connect_error) {
          die("Error de conexión: " . $conn->connect_error);
       }

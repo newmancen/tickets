@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once 'config.php';
 
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['usuario'])) {
@@ -8,7 +9,7 @@ if (!isset($_SESSION['usuario'])) {
 }
 
 // Conexión a la base de datos
- $conn = new mysqli('localhost', 'id20920072_cil', 'Can@lla123', 'id20920072_tickets');
+$conn = new mysqli($servername, $user, $pass, $dbname);
 if ($conn->connect_error) {
   die("Error de conexión: " . $conn->connect_error);
 }
