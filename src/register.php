@@ -29,6 +29,8 @@
 </body>
 </html>
 <?php
+require_once '../config.php';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Obtener los valores enviados por el formulario
   $username = $_POST['username'];
